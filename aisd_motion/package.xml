@@ -5,8 +5,9 @@
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="manf0007@algonquinlive.com">aisd</maintainer>
-  <license>Apache-2.0</license>
+  <license>no license</license>
 
+  <depend>aisd_msgs</depend>
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>

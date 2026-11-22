@@ -16,7 +16,7 @@ setup(
     maintainer='aisd',
     maintainer_email='manf0007@algonquinlive.com',
     description='TODO: Package description',
-    license='Apache-2.0',
+    license='no license',
     extras_require={
         'test': [
             'pytest',
