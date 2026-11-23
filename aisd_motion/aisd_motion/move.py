@@ -27,10 +27,10 @@ class move(Node):
         linear = 0.0
         if msg.xindex > 0.55:
             self.get_logger().info('right')
-            angle = -0.1
+            angle = -0.5
         elif msg.xindex < 0.45:
             self.get_logger().info('left')
-            angle = 0.1
+            angle = 0.5
         else:
             angle = 0.0
         if msg.xindex > msg.xpinky:
