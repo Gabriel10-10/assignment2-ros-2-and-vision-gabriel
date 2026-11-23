@@ -1,7 +1,6 @@
 import rclpy
 from rclpy.node import Node
 
-from std_msgs.msg import String
 from aisd_msgs.msg import Hand
 from geometry_msgs.msg import Twist
 
@@ -10,16 +9,21 @@ class move(Node):
     def __init__(self):
         super().__init__('move')
         self.subscription = self.create_subscription(
-            String,
-            'hand',
+            Hand,
+            'cmd_hand',
             self.listener_callback,
             10
 	)
+        self.vel_publisher = self.create_publisher(
+            Twist,
+            'cmd_vel',
+            10
+        )
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
-        self.get_logger().info('I heard: "%s"' % msg.data)
-	angle = 0.0
+        self.get_logger().info(f' index: {msg.xindex}, Pinky: {msg.xpinky}')
+        angle = 0.0
         linear = 0.0
         if msg.xindex > 0.55:
             self.get_logger().info('right')
